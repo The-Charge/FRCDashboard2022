@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>FRC Dashboard</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/svg.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="grid-container">
+        <div id="timer">
+            <div>2:15</div>
+        </div>
+
+        <div id="camera1-drop-shadow">
+            <div id="camera1"></div>
+        </div>
+
+        <div id="robot">
+            <div style="color:#999">Robot State:</div>
+            <div id="robot-state">UNKNOWN</div>
+
+            <button id="connect-button">Connect</button>
+            <hr>
+        </div>
+
+        <div id="auton">
+            <div class="title-text side-bar">Auton Select:</div>
+            <select id="auto-select" class="side-bar" style="width: 217px;">
+                <option>No auto modes found</option>
+            </select>
+            <hr>
+        </div>
+
+        <div id="gear">
+            <div class="title-text side-bar">Gear:</div>
+            <hr>
+            <div id="gear-state" class="on indicator side-bar" style="font-size: 6vh;">HIGH</div>
+        </div>
+
+        <div id="auto-climber">
+            <div class="title-text side-bar">Auto Climb:</div>
+            <hr>
+            <div id="climb-state" class="on indicator side-bar" style="font-size: 6vh;">ACTIVE</div>
+        </div>
+
+        <div id="driver-assist">
+            <div class="title-text side-bar">Driver Assist:</div>
+            <hr>
+            <div id="assist-state" class="on indicator side-bar" style="font-size: 6vh;">ON</div>
+        </div>
+
+        <div id="arm">
+            <div class="title-text side-bar">Arm:</div>
+            <hr>
+            <div id="arm-state" class="on indicator side-bar" style="font-size: 6vh;">UP</div>
+        </div>
+        
+        <!-- <div id="side">
+            <div>
+                <div style="color:#999">Robot State:</div>
+                <div id="robot-state">UNKNOWN</div>
+
+                <button id="connect-button">Connect</button>
+                <hr>
+
+                <div class="title-text side-bar">Auton Select:</div>
+                <select id="auto-select" class="side-bar" style="width: 217px;">
+                    <option>No auto modes found</option>
+                </select>
+                <hr>
+
+                <div class="title-text side-bar">Gear:</div>
+                <div id="gear" class="on indicator side-bar" style="font-size: 6vh;">HIGH</div>
+            </div>
+        </div> -->
+
+    </div>
+
+    <div id="login">
+        <input id="connect-address" type="text" value="localhost" disabled>
+        <button id="connect" disabled>Connecting</button>
+    </div>
+
+    <script src="networktables/networktables.js"></script>
+    <script src="ui.js"></script>
+    <script src="connection.js"></script>
+</body>
+
+</html>
