@@ -62,7 +62,7 @@ hr {
 }
 
 @keyframes color {
-    12.5% {
+    /* 12.5% {
         box-shadow: 3px 6px #ff0000;
     }
     25% {
@@ -82,7 +82,10 @@ hr {
     }
     87.5% {
         box-shadow: 3px 6px #9932cc;
-    }
+    } */
+    0% {box-shadow: 3px 6px #00ff00;}
+    50% {box-shadow: 3px 6px #ffff00;}
+    100% {box-shadow: 3px 6px #00ff00;}
 }
 
 @keyframes camera-color {
@@ -120,8 +123,8 @@ hr {
     border-width: 2px;
     border-radius: 7px;
     background-color: var(--background);
-    /* animation-name: color; */
-    animation-duration: 5s;
+    animation-name: color;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     position: relative;
@@ -274,8 +277,8 @@ body.login #login {
 .side-bar {
     padding-top: 1%;
     padding-bottom: 1%;
-    margin-top: 1%;
-    margin-bottom: 1%;
+    /* margin-top: 1%;
+    margin-bottom: 1%; */
 }
 
 .guide-line {
