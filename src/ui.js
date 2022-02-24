@@ -4,7 +4,10 @@ let ui = {
     robotState: document.getElementById('robot-state'),
     camera1: document.getElementById('camera1'),
     gearText: document.getElementById('gear-state'),
-    autoSelect: document.getElementById('auto-select')
+    autoSelect: document.getElementById('auto-select'),
+    climberState: document.getElementById('climb-state'),
+    assistState: document.getElementById('assist-state'),
+    armState: document.getElementById('arm-state')
 };
 
 // Update camera every second. This is necessary because if the camera disconnects during the match, it will not automatically reconnect
@@ -37,7 +40,39 @@ NetworkTables.addKeyListener('/SmartDashboard/High Gear', (key, value) => { //FI
         ui.gearText.classList.remove(on);
     }
 });
-
+NetworkTables.addKeyListener('/SmartDashboard/High Driver Assist', (key, value) => { //FINAL NETWORKTABLE VALUE
+    if(value == true) {
+        ui.gearText.innerHTML = 'HIGH';
+        ui.gearText.classList.add(on);
+        ui.gearText.classList.remove(off);
+    } else {
+        ui.gearText.innerHTML = 'LOW';
+        ui.gearText.classList.add(off);
+        ui.gearText.classList.remove(on);
+    }
+});
+NetworkTables.addKeyListener('/SmartDashboard/High Auto Climb', (key, value) => { //FINAL NETWORKTABLE VALUE
+    if(value == true) {
+        ui.gearText.innerHTML = 'HIGH';
+        ui.gearText.classList.add(on);
+        ui.gearText.classList.remove(off);
+    } else {
+        ui.gearText.innerHTML = 'LOW';
+        ui.gearText.classList.add(off);
+        ui.gearText.classList.remove(on);
+    }
+});
+NetworkTables.addKeyListener('/SmartDashboard/High Arm', (key, value) => { //FINAL NETWORKTABLE VALUE
+    if(value == true) {
+        ui.gearText.innerHTML = 'HIGH';
+        ui.gearText.classList.add(on);
+        ui.gearText.classList.remove(off);
+    } else {
+        ui.gearText.innerHTML = 'LOW';
+        ui.gearText.classList.add(off);
+        ui.gearText.classList.remove(on);
+    }
+});
 
 
 // UNTESTED:

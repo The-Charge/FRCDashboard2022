@@ -186,7 +186,7 @@ hr {
     grid-area: status;
 }
 #connect-button {
-    width: 100%;
+    width: 80%;
 }
 #test-button {
     width: 100%;
@@ -226,6 +226,15 @@ hr {
     font-size: 4vh;
     text-align: right;
 }
+#auto-select{
+    position:relative;
+    top: 40px;
+}
+#connect-button{
+    position: relative;
+    top: 35px;
+}
+
 
 /* Connection Buttons */
 #login {
@@ -258,6 +267,7 @@ body.login #login {
     font-size: 4vh;
     color: var(--text);
     text-align: center;
+
 }
 
 .big-number {
@@ -277,8 +287,8 @@ body.login #login {
 .side-bar {
     padding-top: 1%;
     padding-bottom: 1%;
-    /* margin-top: 1%;
-    margin-bottom: 1%; */
+     margin-top: 1%;
+    margin-bottom: 1%; 
 }
 
 .guide-line {
