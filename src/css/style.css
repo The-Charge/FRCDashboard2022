@@ -186,7 +186,12 @@ hr {
     grid-area: status;
 }
 #connect-button {
-    width: 80%;
+    width: 75%;
+    position: absolute;
+    top: 45px;
+    text-align: center;
+    font-size: 45px;
+    left: 30px;
 }
 #test-button {
     width: 100%;
@@ -228,13 +233,15 @@ hr {
 }
 #auto-select{
     position:relative;
-    top: 40px;
+    top: 100px;
+    text-align: center;
+    font-size: 27px;
+    right: 5px;
 }
-#connect-button{
-    position: relative;
-    top: 35px;
+#robot-state{
+    position:relative; 
+    right:-95px;
 }
-
 
 /* Connection Buttons */
 #login {
@@ -280,7 +287,6 @@ body.login #login {
     font-size: 7vh;
     text-align: center;
 }
-
 
 /* Other UI Elements */
 

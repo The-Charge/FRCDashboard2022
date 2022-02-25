@@ -20,16 +20,20 @@
 
         <div id="robot">
             <div style="color:#999">Robot State:</div>
-            <button id="connect-button">Connect</button>
-            <div id="robot-state" style="position:relative;">UNKNOWN</div>
+            <div id="button-connect">
+                <button id="connect-button">Connect</button>
+             </div>
+            <div id="robot-state">UNKNOWN</div>
             <hr>
         </div>
 
         <div id="auton">
             <div class="title-text side-bar">Auton Select:</div>
-            <select id="auto-select" class="side-bar" style="width: 217px;">
+            <div id="button-auton">
+            <select id="auto-select" class="side-bar" style="width: 310px;">
                 <option>No auto modes found</option>
             </select>
+            </div>
             <hr>
         </div>
 
@@ -55,11 +59,11 @@
         </div>
 
         <div id="arm">
-            <div class="title-text side-bar" style="background-color: red;">Arm:
+            <div class="title-text side-bar">Arm:
                 <hr>
-                <div id="arm-state" class="on indicator side-bar" style="font-size: 6vh; background-color: orange;">UP</div>
+                <div id="arm-state" class="on indicator side-bar" style="font-size: 6vh">UP</div>
                 <svg width="200" height="110">
-                    <rect width="300" height="25" style="fill:rgb(187, 187, 238);stroke-width:3;stroke:rgb(0,0,0)" />
+                    <rect width="300" height="25" style="fill:rgb(187, 187, 238);stroke-width:3;stroke:rgb(0,0,0)"/>
                 </svg>
             </div>
         </div>
