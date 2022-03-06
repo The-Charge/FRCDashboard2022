@@ -40,37 +40,44 @@ NetworkTables.addKeyListener('/SmartDashboard/High Gear', (key, value) => { //FI
         ui.gearText.classList.remove(on);
     }
 });
-NetworkTables.addKeyListener('/SmartDashboard/High Driver Assist', (key, value) => { //FINAL NETWORKTABLE VALUE
+NetworkTables.addKeyListener('/SmartDashboard/Driver Assist', (key, value) => { //FINAL NETWORKTABLE VALUE
     if(value == true) {
-        ui.gearText.innerHTML = 'HIGH';
-        ui.gearText.classList.add(on);
-        ui.gearText.classList.remove(off);
+        ui.assistState.innerHTML = 'CONNECTED';
+        ui.assistState.classList.add(on);
+        ui.assistState.classList.remove(off);
     } else {
-        ui.gearText.innerHTML = 'LOW';
-        ui.gearText.classList.add(off);
-        ui.gearText.classList.remove(on);
+        ui.assistState.innerHTML = 'DISCONNECTED';
+        ui.assistState.classList.add(off);
+        ui.assistState.classList.remove(on);
     }
 });
-NetworkTables.addKeyListener('/SmartDashboard/High Auto Climb', (key, value) => { //FINAL NETWORKTABLE VALUE
+NetworkTables.addKeyListener('/SmartDashboard/Auto Climb', (key, value) => { //FINAL NETWORKTABLE VALUE
     if(value == true) {
-        ui.gearText.innerHTML = 'HIGH';
-        ui.gearText.classList.add(on);
-        ui.gearText.classList.remove(off);
+        ui.climberState.innerHTML = 'ACTIVE';
+        ui.climberState.classList.add(on);
+        ui.climberState.classList.remove(off);
     } else {
-        ui.gearText.innerHTML = 'LOW';
-        ui.gearText.classList.add(off);
-        ui.gearText.classList.remove(on);
+        ui.climberState.innerHTML = 'INACTIVE';
+        ui.climberState.classList.add(off);
+        ui.climberState.classList.remove(on);
     }
 });
-NetworkTables.addKeyListener('/SmartDashboard/High Arm', (key, value) => { //FINAL NETWORKTABLE VALUE
+NetworkTables.addKeyListener('/SmartDashboard/Arm Up', (key, value) => { //FINAL NETWORKTABLE VALUE
     if(value == true) {
-        ui.gearText.innerHTML = 'HIGH';
-        ui.gearText.classList.add(on);
-        ui.gearText.classList.remove(off);
+        ui.armState.innerHTML = 'UP';
+        ui.armState.classList.add(on);
+        ui.armState.classList.remove(off);
+
+        ui.armState.getElementById("rectUp").setAttribute("opacity", "1.0");
+        ui.armState.getElementById("rectDown").setAttribute("opacity", "0.15");
+
     } else {
-        ui.gearText.innerHTML = 'LOW';
-        ui.gearText.classList.add(off);
-        ui.gearText.classList.remove(on);
+        ui.armState.innerHTML = 'DOWN';
+        ui.armState.classList.add(off);
+        ui.armState.classList.remove(on);
+
+        ui.armState.getElementById("rectUp").setAttribute("opacity", "0.15");
+        ui.armState.getElementById("rectDown").setAttribute("opacity", "1.0");
     }
 });
 

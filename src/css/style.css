@@ -164,7 +164,7 @@ hr {
 #arm {
     grid-area: arm;
 }
-
+ 
 
 #heading {
     grid-area: heading;
@@ -318,6 +318,6 @@ body.login #login {
     color: rgb(40, 140, 20);
     font-size: 7vh;
     font-family: sans-serif;
-    font-weight: bold;
+    font-weight: bold; 
 }
 
