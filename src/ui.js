@@ -7,7 +7,9 @@ let ui = {
     autoSelect: document.getElementById('auto-select'),
     climberState: document.getElementById('climb-state'),
     assistState: document.getElementById('assist-state'),
-    armState: document.getElementById('arm-state')
+    armState: document.getElementById('arm-state'),
+    rectUp: document.getElementById('rectUp'),
+    rectDown: document.getElementById('rectDown')
 };
 
 // Update camera every second. This is necessary because if the camera disconnects during the match, it will not automatically reconnect
@@ -68,33 +70,45 @@ NetworkTables.addKeyListener('/SmartDashboard/Arm Up', (key, value) => { //FINAL
         ui.armState.classList.add(on);
         ui.armState.classList.remove(off);
 
-        ui.armState.getElementById("rectUp").setAttribute("opacity", "1.0");
-        ui.armState.getElementById("rectDown").setAttribute("opacity", "0.15");
+        ui.rectUp.setAttribute("opacity", "1.0");
+        ui.rectDown.setAttribute("opacity", "0.15");
 
     } else {
         ui.armState.innerHTML = 'DOWN';
         ui.armState.classList.add(off);
         ui.armState.classList.remove(on);
 
-        ui.armState.getElementById("rectUp").setAttribute("opacity", "0.15");
-        ui.armState.getElementById("rectDown").setAttribute("opacity", "1.0");
+        ui.rectUp.setAttribute("opacity", "0.15");
+        ui.rectDown.setAttribute("opacity", "1.0");
     }
 });
 
 
 // UNTESTED:
 // Load list of prewritten autonomous modes
-NetworkTables.addKeyListener('/SmartDashboard/AutoSelect', (key, value) => { //FINAL NETWORKTABLE VALUE
+NetworkTables.addKeyListener('/SmartDashboard/AutoSelect', (key, values) => { //FINAL NETWORKTABLE VALUE
     // Clear previous list
-    while (ui.input.autoSelect.firstChild) {
-        ui.input.autoSelect.removeChild(ui.input.autoSelect.firstChild);
-    }
+    // while (ui.input.autoSelect.firstChild) {
+    //     ui.input.autoSelect.removeChild(ui.input.autoSelect.firstChild);
+    // }
     // Make an option for each autonomous mode and put it in the selector
-    for (let i = 0; i < value.length; i++) {
+    // for (let i = 0; i < value.length; i++) {
+    //     var option = document.createElement('option');
+    //     option.appendChild(document.createTextNode(value[i]));
+    //     ui.input.autoSelect.appendChild(option);
+    // }
+    // // Set value to the already-selected mode. If there is none, nothing will happen.
+    // ui.input.autoSelect.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+
+    while(ui.autoSelect.options.length > 0){
+    	ui.autoSelect.remove(0);
+    }
+  for (let i = 0; i < values.length; i++) {
         var option = document.createElement('option');
-        option.appendChild(document.createTextNode(value[i]));
-        ui.input.autoSelect.appendChild(option);
+        option.text = values[i].getName();
+        option.value = values[i];
+        ui.autoSelect.add(option,null);
     }
     // Set value to the already-selected mode. If there is none, nothing will happen.
-    ui.input.autoSelect.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+    //ui.input.autoSelect.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
 });
