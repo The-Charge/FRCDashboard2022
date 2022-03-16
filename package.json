@@ -21,8 +21,8 @@
   },
   "homepage": "http://frcdashboard.github.io",
   "devDependencies": {
-    "electron": "^17.0.1",
-    "electron-packager": "^15.4.0"
+    "electron": "^1.8.8",
+    "electron-packager": "^10.1.1"
   },
   "dependencies": {
     "wpilib-nt-client": "^1.7.1"

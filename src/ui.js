@@ -15,8 +15,8 @@ let ui = {
 // Update camera every second. This is necessary because if the camera disconnects during the match, it will not automatically reconnect
 setInterval(() => {
     // TEST IMAGES:
-    // ui.camera1.style.backgroundImage = 'url("https://i.ytimg.com/vi/ekthcIHDt3I/maxresdefault.jpg")';
-    ui.camera1.style.backgroundImage = 'url("10.26.19.22:1181/stream.mjpg")';
+     //ui.camera1.style.backgroundImage = 'url("https://i.ytimg.com/vi/ekthcIHDt3I/maxresdefault.jpg")';
+    ui.camera1.style.backgroundImage = 'url("http://10.26.19.22:1181/stream.mjpg")';
 }, 500);
 
 
